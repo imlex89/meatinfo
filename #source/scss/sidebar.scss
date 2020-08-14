@@ -1,0 +1,43 @@
+$j: center;
+$c: center;
+$w: wrap;
+
+@mixin jcw($j, $c, $w) {
+  display: flex;
+  justify-content: $j;
+  align-items: $c;
+  flex-wrap: $w;
+}
+
+.sidebar {
+	&__body {
+		margin: -10px 0;
+	}
+	&__advertising {
+		@include jcw($j, $c, $w);
+		width: 160px;
+		height: 320px;
+		background: #FAFAFA;
+		margin: 10px 0 0 20px;
+		font-size: 20px;
+		line-height: 30px;
+		color: #999;
+	}
+}
+
+@media (max-width: 1200px) {
+}
+@media (max-width: 992px) {
+	.sidebar {
+		margin-top: 2rem;
+	}
+	.sidebar,
+	.sidebar__advertising {
+		width: 100%;
+	}
+	.sidebar__body {
+		display: flex;
+	}
+}
+@media (max-width: 767px) {
+}
